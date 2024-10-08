@@ -47,11 +47,11 @@ Predicted Class Name: Physalis with Husk 1
 ## Experiment 2: Increased Epochs to 20
 
 ### Description
-After increasing the epochs to 20, the model started to converge better, showing significant improvement in both training and validation accuracy.
+In this experiment, we increased the number of training epochs from 6 to 20 to allow the model more time to learn from the dataset. By extending the training process, the model began to converge better, showing significant improvements in both training and validation accuracy. Additionally, a T4 GPU was used for the training process, which drastically reduced training time compared to using a CPU, making it feasible to run more epochs in a reasonable time.
 
 ### Results
-- **Training Accuracy**: (Add percentage here)
-- **Validation Accuracy**: (Add percentage here)
+- **Test Accuracy**: 0.96
+
 
 #### Accuracy and Loss Graphs:
 ![Accuracy After 20 Epochs](path_to_accuracy_chart_20_epochs.png)
