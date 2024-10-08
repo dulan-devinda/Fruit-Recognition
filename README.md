@@ -172,10 +172,169 @@ Explanation:
 After adjusting the model architecture and adding dropout regularization, the model was able to correctly identify unseen fruits from the test dataset, including strawberries. In a more significant development, the model successfully identified new images of fruits, such as a banana, which it had not seen during training. This indicates a notable improvement in the model’s ability to generalize and handle new data effectively.
 
 #### Accuracy and Loss Graphs:
-![Accuracy After Architecture Change](path_to_accuracy_chart_architecture_change.png)
+![Accuracy After Architecture Change](https://github.com/dulan-devinda/Fruit-Recognition/blob/main/Images/graphs.png?raw=true)
 
 #### Confusion Matrix:
-![Confusion Matrix After Architecture Change](path_to_confusion_matrix_architecture_change.png)
+```
+739/739 ━━━━━━━━━━━━━━━━━━━━ 17s 22ms/step
+Confusion Matrix:
+[[1 0 1 ... 1 0 0]
+ [4 0 1 ... 0 1 0]
+ [1 0 1 ... 2 0 1]
+ ...
+ [1 0 1 ... 1 1 0]
+ [1 0 1 ... 1 0 0]
+ [0 2 1 ... 0 0 0]]
+Classification Report:
+                       precision    recall  f1-score   support
+
+              Apple 6       0.00      0.01      0.01       157
+     Apple Braeburn 1       0.00      0.00      0.00       164
+ Apple Crimson Snow 1       0.01      0.01      0.01       148
+       Apple Golden 1       0.01      0.01      0.01       160
+       Apple Golden 2       0.00      0.00      0.00       164
+       Apple Golden 3       0.01      0.01      0.01       161
+ Apple Granny Smith 1       0.01      0.01      0.01       164
+    Apple Pink Lady 1       0.01      0.01      0.01       152
+          Apple Red 1       0.00      0.00      0.00       164
+          Apple Red 2       0.00      0.00      0.00       164
+          Apple Red 3       0.00      0.00      0.00       144
+Apple Red Delicious 1       0.01      0.01      0.01       166
+   Apple Red Yellow 1       0.01      0.01      0.01       164
+   Apple Red Yellow 2       0.01      0.01      0.01       219
+          Apple hit 1       0.01      0.01      0.01       234
+            Apricot 1       0.01      0.01      0.01       164
+            Avocado 1       0.00      0.00      0.00       143
+       Avocado ripe 1       0.01      0.01      0.01       166
+             Banana 1       0.00      0.00      0.00       166
+ Banana Lady Finger 1       0.00      0.00      0.00       152
+         Banana Red 1       0.01      0.01      0.01       166
+           Beetroot 1       0.00      0.00      0.00       150
+          Blueberry 1       0.02      0.02      0.02       154
+      Cabbage white 1       0.00      0.00      0.00        47
+       Cactus fruit 1       0.01      0.01      0.01       166
+         Cantaloupe 1       0.00      0.00      0.00       164
+         Cantaloupe 2       0.01      0.01      0.01       164
+          Carambula 1       0.00      0.00      0.00       166
+             Carrot 1       0.00      0.00      0.00        50
+        Cauliflower 1       0.00      0.00      0.00       234
+             Cherry 1       0.01      0.01      0.01       164
+             Cherry 2       0.02      0.02      0.02       246
+     Cherry Rainier 1       0.02      0.02      0.02       246
+   Cherry Wax Black 1       0.01      0.01      0.01       164
+     Cherry Wax Red 1       0.01      0.01      0.01       164
+  Cherry Wax Yellow 1       0.01      0.01      0.01       164
+           Chestnut 1       0.01      0.01      0.01       153
+         Clementine 1       0.01      0.01      0.01       166
+              Cocos 1       0.00      0.00      0.00       166
+               Corn 1       0.00      0.00      0.00       150
+          Corn Husk 1       0.00      0.00      0.00       154
+           Cucumber 1       0.00      0.00      0.00        50
+           Cucumber 3       0.00      0.00      0.00        81
+      Cucumber Ripe 1       0.00      0.00      0.00       130
+      Cucumber Ripe 2       0.01      0.01      0.01       156
+              Dates 1       0.02      0.02      0.02       166
+           Eggplant 1       0.00      0.00      0.00       156
+      Eggplant long 1       0.00      0.00      0.00        80
+                Fig 1       0.00      0.00      0.00       234
+        Ginger Root 1       0.00      0.00      0.00        99
+         Granadilla 1       0.02      0.02      0.02       166
+         Grape Blue 1       0.01      0.01      0.01       328
+         Grape Pink 1       0.00      0.00      0.00       164
+        Grape White 1       0.01      0.01      0.01       166
+        Grape White 2       0.01      0.01      0.01       166
+        Grape White 3       0.01      0.01      0.01       164
+        Grape White 4       0.01      0.01      0.01       158
+    Grapefruit Pink 1       0.01      0.01      0.01       166
+   Grapefruit White 1       0.01      0.01      0.01       164
+              Guava 1       0.01      0.01      0.01       166
+           Hazelnut 1       0.00      0.00      0.00       157
+        Huckleberry 1       0.01      0.01      0.01       166
+               Kaki 1       0.02      0.02      0.02       166
+               Kiwi 1       0.01      0.01      0.01       156
+           Kohlrabi 1       0.00      0.00      0.00       157
+           Kumquats 1       0.02      0.02      0.02       166
+              Lemon 1       0.00      0.00      0.00       164
+        Lemon Meyer 1       0.00      0.00      0.00       166
+              Limes 1       0.01      0.01      0.01       166
+             Lychee 1       0.01      0.01      0.01       166
+          Mandarine 1       0.02      0.02      0.02       166
+              Mango 1       0.01      0.01      0.01       166
+          Mango Red 1       0.00      0.00      0.00       142
+          Mangostan 1       0.01      0.01      0.01       102
+           Maracuja 1       0.00      0.00      0.00       166
+ Melon Piel de Sapo 1       0.02      0.02      0.02       246
+           Mulberry 1       0.01      0.01      0.01       164
+          Nectarine 1       0.00      0.00      0.00       164
+     Nectarine Flat 1       0.01      0.01      0.01       160
+         Nut Forest 1       0.01      0.01      0.01       218
+          Nut Pecan 1       0.01      0.01      0.01       178
+          Onion Red 1       0.01      0.01      0.01       150
+   Onion Red Peeled 1       0.00      0.00      0.00       155
+        Onion White 1       0.00      0.01      0.01       146
+             Orange 1       0.01      0.01      0.01       160
+             Papaya 1       0.01      0.01      0.01       164
+      Passion Fruit 1       0.01      0.01      0.01       166
+              Peach 1       0.00      0.00      0.00       164
+              Peach 2       0.01      0.01      0.01       246
+         Peach Flat 1       0.00      0.00      0.00       164
+               Pear 1       0.00      0.00      0.00       164
+               Pear 2       0.00      0.00      0.00       232
+               Pear 3       0.00      0.00      0.00        72
+         Pear Abate 1       0.01      0.01      0.01       166
+       Pear Forelle 1       0.01      0.01      0.01       234
+        Pear Kaiser 1       0.01      0.01      0.01       102
+       Pear Monster 1       0.01      0.01      0.01       166
+           Pear Red 1       0.01      0.01      0.01       222
+         Pear Stone 1       0.01      0.02      0.02       237
+      Pear Williams 1       0.02      0.02      0.02       166
+             Pepino 1       0.01      0.01      0.01       166
+       Pepper Green 1       0.00      0.00      0.00       148
+      Pepper Orange 1       0.02      0.02      0.02       234
+         Pepper Red 1       0.00      0.00      0.00       222
+      Pepper Yellow 1       0.00      0.00      0.00       222
+           Physalis 1       0.01      0.01      0.01       164
+ Physalis with Husk 1       0.01      0.01      0.01       164
+          Pineapple 1       0.02      0.02      0.02       166
+     Pineapple Mini 1       0.02      0.02      0.02       163
+       Pitahaya Red 1       0.01      0.01      0.01       166
+               Plum 1       0.00      0.00      0.00       151
+               Plum 2       0.01      0.01      0.01       142
+               Plum 3       0.01      0.01      0.01       304
+        Pomegranate 1       0.00      0.00      0.00       164
+     Pomelo Sweetie 1       0.00      0.00      0.00       153
+         Potato Red 1       0.00      0.01      0.01       150
+  Potato Red Washed 1       0.02      0.02      0.02       151
+       Potato Sweet 1       0.00      0.00      0.00       150
+       Potato White 1       0.01      0.01      0.01       150
+             Quince 1       0.01      0.01      0.01       166
+           Rambutan 1       0.00      0.00      0.00       164
+          Raspberry 1       0.00      0.00      0.00       166
+         Redcurrant 1       0.01      0.01      0.01       164
+              Salak 1       0.01      0.01      0.01       162
+         Strawberry 1       0.01      0.01      0.01       164
+   Strawberry Wedge 1       0.01      0.01      0.01       246
+          Tamarillo 1       0.01      0.01      0.01       166
+            Tangelo 1       0.00      0.00      0.00       166
+             Tomato 1       0.01      0.01      0.01       246
+             Tomato 2       0.00      0.00      0.00       225
+             Tomato 3       0.01      0.01      0.01       246
+             Tomato 4       0.01      0.01      0.01       160
+  Tomato Cherry Red 1       0.01      0.01      0.01       164
+       Tomato Heart 1       0.01      0.01      0.01       228
+      Tomato Maroon 1       0.00      0.00      0.00       127
+      Tomato Yellow 1       0.00      0.00      0.00       153
+ Tomato not Ripened 1       0.01      0.01      0.01       158
+             Walnut 1       0.01      0.01      0.01       249
+         Watermelon 1       0.01      0.01      0.01       157
+           Zucchini 1       0.00      0.00      0.00        80
+      Zucchini dark 1       0.00      0.00      0.00        80
+
+             accuracy                           0.01     23619
+            macro avg       0.01      0.01      0.01     23619
+         weighted avg       0.01      0.01      0.01     23619
+
+```
 ## Final Model Performance
 
 ### Description
@@ -185,11 +344,6 @@ The final model achieved significant improvements after fine-tuning and increasi
 - **Training Accuracy**: 100%
 - **Validation Accuracy**: 97.8%
 
-#### Final Accuracy and Loss Graphs:
-![Final Accuracy](path_to_final_accuracy_chart.png)
-
-#### Final Confusion Matrix:
-![Final Confusion Matrix](path_to_final_confusion_matrix.png)
 ## Conclusion
 By experimenting with different architectures and increasing the number of epochs, the model’s accuracy improved significantly. The final model can classify over 100 types of fruits with an accuracy of 97.8%. Data augmentation and regularization techniques played a key role in improving the model's generalization.
 
