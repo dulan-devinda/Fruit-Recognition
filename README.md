@@ -9,12 +9,41 @@ The model was initially trained for 6 epochs. The training and validation accura
 
 ### Results
 - **Test Accuracy**: 0.94
+### Image Prediction Example
+
+You can load an image and predict the fruit class using the model. Below is an example of how to use the model to classify an image of a fruit.
+
+```python
+import numpy as np
+from tensorflow.keras.preprocessing import image
+
+# Load and preprocess a new image
+img_path = '/content/drive/MyDrive/Fruit Recognition Dataset/bunch-bananas-isolated-on-white-260nw-1722111529.webp'
+img = image.load_img(img_path, target_size=(100, 100))
+img_array = image.img_to_array(img)
+img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
+img_array /= 255.0  # Rescale
+
+# Make a prediction
+predictions = model.predict(img_array)
+predicted_class_index = np.argmax(predictions, axis=1)[0]  # Get the class index
+
+# Get class names from the training generator
+class_names = list(train_generator.class_indices.keys())  # This gives you the fruit names
+predicted_class_name = class_names[predicted_class_index]
+
+print(f'Predicted Class Index: {predicted_class_index}')
+print(f'Predicted Class Name: {predicted_class_name}')
+```
+```
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 46ms/step
+Predicted Class Index: 106
+Predicted Class Name: Physalis with Husk 1
+```
 
 #### Accuracy and Loss Graphs:
-![Accuracy After 6 Epochs](path_to_accuracy_chart_6_epochs.png)
+![Accuracy After 6 Epochs](https://github.com/dulan-devinda/Fruit-Recognition/blob/main/Images/graphs%20for%206%20epochs.png?raw=true)
 
-#### Confusion Matrix:
-(Provide a brief description of the confusion matrix)
 ## Experiment 2: Increased Epochs to 20
 
 ### Description
