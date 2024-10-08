@@ -132,10 +132,44 @@ The model misclassifies a banana image as Physalis with Husk 1. This shows that 
 
 ### Description
 The model architecture was enhanced to improve its ability to generalize and reduce overfitting. The new architecture consists of three Conv2D layers, each followed by a MaxPooling2D layer, a Flatten layer, and two Dense layers, with one Dropout layer between them for regularization. The Conv2D layers use 32, 64, and 128 filters, respectively, and the model has approximately 3.4 million trainable parameters.
+![Model Architecture](https://github.com/dulan-devinda/Fruit-Recognition/blob/main/Images/model.png?raw=true)
 
 ### Results
-- **Training Accuracy**: (Add percentage here)
-- **Validation Accuracy**: (Add percentage here)
+- **Training Accuracy**: 100.00%
+- **Validation Accuracy**: 97.80%
+
+### Image Prediction Example
+```python
+from tensorflow.keras.preprocessing import image
+import numpy as np
+
+# Load and preprocess a test image
+img_path = '/content/drive/MyDrive/Fruit Recognition Dataset/banana.jfif'  # Replace with the path to your image
+img = image.load_img(img_path, target_size=(100, 100))  # Resize image to the size your model expects
+img_array = image.img_to_array(img)  # Convert image to array
+img_array = np.expand_dims(img_array, axis=0)  # Add an extra dimension for batch (1, 100, 100, 3)
+
+# Normalize the image (optional depending on how your training data was preprocessed)
+img_array = img_array / 255.0
+
+# Make a prediction
+predictions = model.predict(img_array)
+
+# Get the predicted class index and name
+predicted_class_index = np.argmax(predictions, axis=1)[0]  # Index of the predicted class
+predicted_class_name = class_names[predicted_class_index]  # Get the class name
+
+print(f'Predicted Class Index: {predicted_class_index}')
+print(f'Predicted Class Name: {predicted_class_name}')
+```
+```
+1/1 ━━━━━━━━━━━━━━━━━━━━ 1s 821ms/step
+Predicted Class Index: 18
+Predicted Class Name: Banana 1
+```
+Explanation:
+
+After adjusting the model architecture and adding dropout regularization, the model was able to correctly identify unseen fruits from the test dataset, including strawberries. In a more significant development, the model successfully identified new images of fruits, such as a banana, which it had not seen during training. This indicates a notable improvement in the model’s ability to generalize and handle new data effectively.
 
 #### Accuracy and Loss Graphs:
 ![Accuracy After Architecture Change](path_to_accuracy_chart_architecture_change.png)
