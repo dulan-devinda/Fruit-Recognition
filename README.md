@@ -131,7 +131,7 @@ The model misclassifies a banana image as Physalis with Husk 1. This shows that 
 ## Experiment 3: Changed Model Architecture
 
 ### Description
-The model architecture was modified by adding more convolutional layers and using dropout for regularization. This improved the model's ability to generalize and reduced overfitting.
+The model architecture was enhanced to improve its ability to generalize and reduce overfitting. The new architecture consists of three Conv2D layers, each followed by a MaxPooling2D layer, a Flatten layer, and two Dense layers, with one Dropout layer between them for regularization. The Conv2D layers use 32, 64, and 128 filters, respectively, and the model has approximately 3.4 million trainable parameters.
 
 ### Results
 - **Training Accuracy**: (Add percentage here)
