@@ -1,4 +1,4 @@
-# Fruit-Recognition
+# Fruit-Recognition CNN
 
 ## Project Overview
 This project implements a fruit recognition system using CNNs. The model was trained on a large dataset with over 100 fruit classes. Various architectures and configurations were tested to improve accuracy and performance.
@@ -8,8 +8,7 @@ This project implements a fruit recognition system using CNNs. The model was tra
 The model was initially trained for 6 epochs. The training and validation accuracy were recorded, but the model showed signs of underfitting, indicating that more epochs were needed.
 
 ### Results
-- **Training Accuracy**: (Add percentage here)
-- **Validation Accuracy**: (Add percentage here)
+- **Test Accuracy**: 0.94
 
 #### Accuracy and Loss Graphs:
 ![Accuracy After 6 Epochs](path_to_accuracy_chart_6_epochs.png)
